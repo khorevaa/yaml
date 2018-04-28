@@ -22,24 +22,36 @@
 Процедура ТестДолжен_ПростуюСтроку() Экспорт
 
 	СтрокаПроверки = "
-	|a: 1
-	|  b: abc
-	|  # comment
-	|  E:
-	|    # comment
-	|    - 1
-	|    - 2
-	|    - 3 #comment
+    |ИмяПроекта: &app_name test-app
+    |
+    |build:
+    |  binary: *app_name
+    |
+    |releases:
+    |  repo:
+    |    name: test
+    |    owner: khorevaa
+    |
+    |checksum:
+    |  name_template: '{{ .ProjectName }}_checksums.txt'
+    |changelog:
+    |  filters:
+    |    include:
+    |      - '^docs:'
+    |      - '^test:'
+    |      - Merge pull request
+    |      - Merge branch
+    |  sort: asc
 	|";
 	
 	Парсер = Новый ПарсерYAML;
 	Результат = Парсер.ПрочитатьYAML(СтрокаПроверки);
 	Лог.Отладка("Сообщаяю результат:");
 	СообщитьСоответсвтвие(Результат);
+
 КонецПроцедуры
 
 Процедура СообщитьСоответсвтвие(Соотв)
-
 
 	Для каждого Ключ Из Соотв Цикл
 		Сообщить(Ключ.Ключ);
