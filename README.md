@@ -1,4 +1,4 @@
-# `Y`_et_ `A`_in't_ `M`_arup_ `L`_anguage_ для OScript
+# `Y`_et_ `A`_in't_ `M`_arkup_ `L`_anguage_ для OScript
 
 [![Stars](https://img.shields.io/github/stars/khorevaa/yaml.svg?label=Github%20%E2%98%85&a)](https://github.com/khorevaa/yaml/stargazers)
 [![Release](https://img.shields.io/github/tag/khorevaa/yaml.svg?label=Last%20release&a)](https://github.com/khorevaa/yaml/releases)
